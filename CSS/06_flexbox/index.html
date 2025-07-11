@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+             height: 200px; 
+             width: 200px; 
+            border: 2px solid brown;
+            margin: 2px;
+            padding: 2px;
+        }
+        .container{
+            background-color: beige;
+            border: 1px solid black;
+            margin: 2px;
+            padding: 2px;
+            display: flex;
+
+            /* flex-direction: row;  */
+            /* align-items: start; */
+
+            /* flex-wrap: wrap; */
+            justify-content: start;
+            align-content: start;
+            /* flex-direction: row-reverse;  */
+
+            /* flex-direction: column-reverse;  */
+
+             /* flex-direction: column-reverse;  */
+
+             /* flex-wrap:  wrap-reverse; */
+            /* justify-content: center;
+            align-items: center; */
+
+             
+            /*justify-content:
+             space-between;  */
+
+            /* justify-content: space-around;  */
+            align-items: stretch;
+
+
+        }
+        #box1{
+            background-color: aquamarine;
+            /* order: 500; */
+            flex-grow: 5;
+            align-self: center;
+        }
+        #box2{
+            background-color: blue;
+            /* order: 500; */
+            /* flex-grow: 1; */
+        }
+        #box3{
+            background-color: orange;
+            /* order: 500; */
+            /* flex-grow: 1; */
+        }
+        #box4{
+            background-color: brown;
+            /* order: 500; */
+            /* flex-grow: 1; */
+            flex-basis: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div   class="box"id="box1">box1</div>
+        <div   class="box"id="box2">box2</div>
+        <div   class="box"id="box3">box3</div>
+        <div   class="box"id="box4">box4</div>
+    </div>
+    
+</body>
+</html>

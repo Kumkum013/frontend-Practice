@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animations</title>
+    <style>
+
+        .box{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: beige;
+            border: 5px solid black;
+        }
+        .box{
+            width: 350px;
+            height: 80px;
+            background-color: rgb(99, 43, 8);
+            border-radius: 10;
+            margin: 10px;
+            border:3px solid rgb(22, 22, 7);
+            position:relative;
+            /* animation-name:  rightMovement;  */
+             
+             /*animation-duration: 5s;
+             animation-iteration-count: 2;
+             animation-delay: 1s;
+             animation-timing-function: (1,-0,4,1,  1); 
+             animation-timing-function: linear;
+             animation-direction:alternate ;
+             animation-direction: alternate-reverse;
+             animation-fill-mode: backwards; 
+
+             @keyframes duration|easing-function|delay|iteration-count|direction|fill-mode|play-state|name */
+
+            animation: 5s linear 1s infinite alternate  none running rigtMovement; 
+            } 
+
+            #box2  {
+            width: 350px;
+            height: 80px;
+            background-color: rgb(175, 100, 13);
+            border-radius: 10;
+            margin: 10px;
+            border:3px solid yellow;
+            position:relative;
+            animation: 5s linear 1s infinite alternate  none running leftMovement; 
+
+            } 
+           
+             
+             /* @keyframes rightMovement */
+            @keyframes leftMovement
+            {
+                
+           
+            from{
+                top:0;
+                left:0;
+            }
+            to{
+                top:0;
+                left: 1200px;
+            }
+        }
+             #cirle
+            {
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             width: 100px;
+             height: 100px;
+             background-color: rgb(116, 26, 104);
+             border-radius: 50px;
+             margin: 10px ; 
+             position:relative;
+             top: 40%;
+             left: 40%;
+             animation: 10s linear 0s infinite alternate-reverse  none running circleMovement;
+            }
+         
+            @keyframes circleMovement
+            {
+            0%{
+                top:1%;
+                left:5%;
+            }
+            30%{
+                top:5%;
+                left: 90%;
+            }
+            60%{
+                 top:75%;
+                 left:5% ;  
+            }
+            100%{
+                  top: 70%;
+                  left: 90%;  
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>   
+        <div id="box2"></div> 
+        <div id="cirle">Vinay<div> 
+        <div id="cirle">Chandan<div> 
+        <div id="cirle">Kumkum<div> 
+     </div>
+    
+</body>
+</html>
