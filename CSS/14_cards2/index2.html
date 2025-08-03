@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+          
+            background: radial-gradient(circle,         rgba(15, 49, 242, 1) 0%, rgba(252,      70, 107, 1) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .card{
+            
+            width: 400px;
+            height: 600px;
+            background-color: white;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            padding: 20px;
+
+        }
+        .card img{
+            width: 200px;
+            height: 300px;
+            border-top-left-radius:20px ;
+            border-bottom-right-radius: 20px;
+            
+
+        }
+        .textbox{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 10px;
+            width: 70%;
+            text-align: center;
+            border-radius: 20px;
+        }
+        #amountbox{
+            width: 80%;
+            height: 9%;
+            background-color: aqua;
+            border-radius: 20px;
+        }
+        #paymentbutton{
+            width: 80%;
+            height: 9%;
+            background-color: brown;
+            border-radius: 10px;
+            color: white;
+                                
+        }
+        .cancelbox{
+            text-decoration: none;
+            color: rgba(15, 49, 242, 1);
+            font-weight: bold;
+            font-size: large;
+        }
+        .leftbox{
+            width: fit-content;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .rightbox{
+            align-items: center;
+            padding: 20px;
+        }
+        .leftbox {
+            height: 100px;
+            display: flex;
+            gap:15px ;
+            align-items: center;
+        }
+        .imgbox img{
+            height: 2rem;
+            width: 2 rem;
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+   <img src="image.png" alt="">
+   <div class="textbox">
+    <h2>order summary</h2>
+   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae nulla neque voluptatem cum consequatur. Veniam at dolorem,  Necessitatibus.</p>
+   </div>
+
+   <div id ="amountbox">
+    <div class="leftbox">
+        <div class="imgbox">
+            <img src="image.png" alt="">
+        </div>
+        
+    </div>
+    <div class="rightbox">
+        <a href="change"></a>
+    </div>
+    <div class="textamountbox">
+        <p>amount</p>
+        <p>$99.9/year</p>
+    </div>
+   </div>
+
+    <button id="paymentbutton">proceed to paymentbutton </button>
+
+    <div class="cancelbox">
+        <a href=" ">cancel the order</a>
+    </div>
+   </div>
+   
+   </div>
+    </div>
+    
+</body>
+</html>

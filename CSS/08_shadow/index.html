@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+           --primary-color:brown;
+            --custom-width:330px; 
+        }
+        .container{
+            background-color: beige;
+            height: 650;
+          
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            background-color: aquamarine;
+            width: 330px;
+            height: 330px;
+            border: 1px solid var var(--primary-color);
+            width:var(--custom-width);
+            margin: 5px;
+            padding:5px ;
+            /* x,y offset and blur radius sprea*/
+            /* box-shadow: -5px 5px 5px 50px rgb(165, 130, 130); */
+            /* box-shadow: inset 5px 5px brown,15px 8px green; */
+            /* box-shadow:  5px 5px brown,15px 8px green; */
+            
+            box-shadow: -10px -60px var(--primary-color);
+            #head1{
+                /* text-shadow: 2px 3px 2px white; */
+                /* text-shadow: yellow 2px 3px 2px ;  */
+                /* text-shadow: 12px 13px 2px white;  */
+                text-shadow: 2px 3px 2px ; 
+            }
+            
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="image.png" alt="image">
+            <h2 id="head1">welcome to world of web dev</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing quatur excepturi. Tempora recusandae nam ipsum.</p>
+        </div>
+    </div>
+    
+</body>
+</html>
