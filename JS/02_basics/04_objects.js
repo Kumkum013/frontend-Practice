@@ -11,7 +11,7 @@ const regularUser = {
     email: "some@gmail.com",
     fullname: {
         userfullname: {
-            firstname: "hitesh",
+            firstname: "kumkum",
             lastname: "choudhary"
         }
     }
@@ -80,3 +80,5 @@ console.log(instructor);
     {}
 ]
 
+// random user api
+// jason formatter
