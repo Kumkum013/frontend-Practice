@@ -13,7 +13,7 @@ const user = {
 // user.username = "sam"
 // user.welcomeMessage()
 
-// console.log(this);
+//console.log(this);
 
 // function chai(){
 //     let username = "hitesh"
@@ -22,15 +22,15 @@ const user = {
 
 // chai()
 
-// const chai = function () {
-//     let username = "hitesh"
-//     console.log(this.username);
+//  const chai = function () {
+//      let username = "kumkum"
+//   console.log(this.username);
 // }
 
-const chai =  () => {
-    let username = "kumkum"
-    console.log(this);
-}
+// const chai =  () => {
+//     let username = "kumkum"
+//     console.log(this);
+// }
 
 
 // chai()
