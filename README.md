@@ -1,4 +1,4 @@
-# 🌌 uiverse
+# 🌌 universe
 
 🚀 Exploring the universe of frontend development — from basics to modern frameworks.
 
@@ -69,9 +69,9 @@ I'm currently building skills in:
 | Skill/Tech     | Status         |
 |----------------|----------------|
 | HTML & CSS     | ✅ Completed   |
-| JavaScript     | 🟡 In Progress |
+| JavaScript     | 🟡 completed |
 | Tailwind CSS   | 🟡 In Progress |
-| React          | 🔜 Coming Soon |
+| React          | 🔜 In Progress|
 
 ---
 
