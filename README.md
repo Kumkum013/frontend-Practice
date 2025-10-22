@@ -1,4 +1,4 @@
-# 🌌 uiverse
+# 🌌 universe
 
 🚀 Exploring the universe of frontend development — from basics to modern frameworks.
 
