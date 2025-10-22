@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathology Lab Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Authentication Screen -->
+    <div id="authScreen">
+        <div class="auth-container">
+            <div class="auth-header">
+                <h2>Pathology Lab System</h2>
+                <p>Patient & Doctor Portal</p>
+            </div>
+
+            <div class="auth-tabs">
+                <button class="auth-tab active" onclick="switchAuthTab('login')">Login</button>
+                <button class="auth-tab" onclick="switchAuthTab('register')">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form active" onsubmit="handleLogin(event)">
+                <div id="loginMessage" class="message"></div>
+                
+                <div class="form-group">
+                    <label>I am a:</label>
+                    <div class="role-selector">
+                        <label class="role-option selected">
+                            <input type="radio" name="loginRole" value="patient" checked>
+                            <div>Patient</div>
+                        </label>
+                        <label class="role-option">
+                            <input type="radio" name="loginRole" value="doctor">
+                            <div>Doctor</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" required placeholder="your@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required placeholder="Enter your password">
+                </div>
+
+                <button type="submit" class="submit-btn">Login</button>
+
+                <div class="switch-auth">
+                    Don't have an account? <a onclick="switchAuthTab('register')">Register here</a>
+                </div>
+            </form>
+
+            <!-- Registration Form -->
+            <form id="registerForm" class="auth-form" onsubmit="handleRegister(event)">
+                <div id="registerMessage" class="message"></div>
+                
+                <div class="form-group">
+                    <label>I am a:</label>
+                    <div class="role-selector">
+                        <label class="role-option selected">
+                            <input type="radio" name="regRole" value="patient" checked>
+                            <div>Patient</div>
+                        </label>
+                        <label class="role-option">
+                            <input type="radio" name="regRole" value="doctor">
+                            <div>Doctor</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="regName">Full Name</label>
+                    <input type="text" id="regName" required placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="regEmail">Email Address</label>
+                    <input type="email" id="regEmail" required placeholder="your@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="regPassword">Password</label>
+                    <input type="password" id="regPassword" required placeholder="Minimum 8 characters">
+                </div>
+
+                <div class="form-group">
+                    <label for="regConfirmPassword">Confirm Password</label>
+                    <input type="password" id="regConfirmPassword" required placeholder="Re-enter password">
+                </div>
+
+                <button type="submit" class="submit-btn">Register</button>
+
+                <div class="switch-auth">
+                    Already have an account? <a onclick="switchAuthTab('login')">Login here</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Application -->
+    <div id="mainApp" class="hidden">
+        <div class="container">
+            <header>
+                <div class="header-content">
+                    <h1>Pathology Lab Management System</h1>
+                    <p id="headerSubtitle">Streamline Your Healthcare Operations</p>
+                </div>
+                <div class="user-info">
+                    <div class="default-avatar" id="userAvatar">RP</div>
+                    <div class="user-text">
+                        <strong id="userNameDisplay">Ruchita Pujar</strong>
+                        <small id="userRoleDisplay">Patient</small>
+                        <button class="logout-btn" onclick="handleLogout()">Logout</button>
+                    </div>
+                </div>
+            </header>
+
+            <nav id="mainNav">
+                <!-- Navigation buttons will be dynamically loaded -->
+            </nav>
+
+            <main>
+                <!-- Book Appointment Page (Patient Only) -->
+                <div id="bookAppointment" class="page">
+                    <h2>Book New Appointment</h2>
+                    <div id="addMessage" class="message"></div>
+                    
+                    <form id="appointmentForm" onsubmit="addAppointment(event)">
+                        <div class="form-group">
+                            <label for="patientName">Patient Name</label>
+                            <input type="text" id="patientName" required placeholder="Enter patient full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="patientDOB">Date of Birth</label>
+                            <input type="date" id="patientDOB" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="doctor">Select Doctor</label>
+                            <select id="doctor" required>
+                                <option value="">-- Choose Doctor --</option>
+                                <option value="Dr. Ruchita Pujar">Dr. Ruchita Pujar - General Pathology</option>
+                                <option value="Dr. Niranjana Gawalikar">Dr. Niranjana Gawalikar - Clinical Pathology</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="test">Select Test</label>
+                            <select id="test" required>
+                                <option value="">-- Choose Test --</option>
+                                <option value="Blood Test">Blood Test</option>
+                                <option value="Stool Test">Stool Test</option>
+                                <option value="Plasma Test">Plasma Test</option>
+                                <option value="Swab Test">Swab Test</option>
+                                <option value="Urine Test">Urine Test</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="appointmentDate">Appointment Date</label>
+                            <input type="date" id="appointmentDate" required>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Book Appointment</button>
+                    </form>
+                </div>
+
+                <!-- View Appointments Page (Both) -->
+                <div id="viewAppointments" class="page">
+                    <h2>Appointments</h2>
+                    <div id="viewMessage" class="message"></div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Appt #</th>
+                                <th>Patient Name</th>
+                                <th>Doctor</th>
+                                <th>Test</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th id="actionHeader" class="hidden">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointmentsTable">
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- New Report Page (Doctor Only) -->
+                <div id="newReport" class="page">
+                    <h2>Create New Report</h2>
+                    <div id="reportMessage" class="message"></div>
+                    
+                    <form id="reportForm" onsubmit="addReport(event)">
+                        <div class="form-group">
+                            <label for="reportPatient">Patient Name</label>
+                            <input type="text" id="reportPatient" required placeholder="Enter patient name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reportTest">Test Type</label>
+                            <select id="reportTest" required>
+                                <option value="">-- Select Test --</option>
+                                <option value="Blood Test">Blood Test</option>
+                                <option value="Stool Test">Stool Test</option>
+                                <option value="Plasma Test">Plasma Test</option>
+                                <option value="Swab Test">Swab Test</option>
+                                <option value="Urine Test">Urine Test</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reportDate">Report Date</label>
+                            <input type="date" id="reportDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reportStatus">Status</label>
+                            <select id="reportStatus" required>
+                                <option value="Processing">Processing</option>
+                                <option value="Ready">Ready</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Create Report</button>
+                    </form>
+                </div>
+
+                <!-- Update Status Page (Doctor Only) -->
+                <div id="updateStatus" class="page">
+                    <h2>Update Appointment Status</h2>
+                    <div id="updateMessage" class="message"></div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Appt #</th>
+                                <th>Patient Name</th>
+                                <th>Doctor</th>
+                                <th>Test</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Update</th>
+                            </tr>
+                        </thead>
+                        <tbody id="updateTable">
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <div class="footer-logo">PathLab System</div>
+                        <p>Leading the way in modern pathology lab management with cutting-edge technology and exceptional patient care.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-icon" title="Facebook">f</a>
+                            <a href="#" class="social-icon" title="Twitter">X</a>
+                            <a href="#" class="social-icon" title="LinkedIn">in</a>
+                            <a href="#" class="social-icon" title="Instagram">I</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#" class="footer-link">About Us</a></li>
+                            <li><a href="#" class="footer-link">Our Services</a></li>
+                            <li><a href="#" class="footer-link">Patient Portal</a></li>
+                            <li><a href="#" class="footer-link">Careers</a></li>
+                            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Contact Us</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">P</div>
+                            <div>
+                                <strong>Phone</strong><br>
+                                +1 (555) 123-4567
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">E</div>
+                            <div>
+                                <strong>Email</strong><br>
+                                info@pathlabsystem.com
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">L</div>
+                            <div>
+                                <strong>Address</strong><br>
+                                123 Medical Plaza, Suite 500<br>
+                                Healthcare City, HC 12345
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h3>Working Hours</h3>
+                        <ul>
+                            <li>Monday - Friday: 8:00 AM - 8:00 PM</li>
+                            <li>Saturday: 9:00 AM - 5:00 PM</li>
+                            <li>Sunday: 10:00 AM - 3:00 PM</li>
+                            <li style="color: #1e3c72; font-weight: 600;">24/7 Emergency Services</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p style="font-weight: 600; color: #1e3c72;">2025 Pathology Lab Management System. All Rights Reserved.</p>
+                    <p>Designed for Healthcare Excellence</p>
+                    <p style="font-size: 0.85em;">Terms of Service | Privacy Policy | Cookie Policy | Accessibility Statement</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
