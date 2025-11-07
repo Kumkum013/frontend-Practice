@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+/* Background setup */
+body {
+  background: url('assets/bg.jpg');
+  width: 100%;
+  height: 100dvh;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+/* Glass blur overlay */
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(15px);
+  z-index: -1;
+}
+
+/* Main app container */
+.main-container {
+  position: relative;
+  border: solid 1px rgba(255, 255, 255, 0.3);
+  width: 300px;
+  height: 496px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.15), rgba(255,255,255,0.05));
+  border-radius: 16px;
+  padding: 20px;
+  margin: 80px auto 0 auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* ✅ ensures bottom section stays inside */
+  justify-content: space-evenly;
+}
+
+/* Input field container */
+.input-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.city-input {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 99px;
+  border: 3px solid transparent;
+  background: rgba(255, 255, 255, 0.9);
+  outline: none;
+  font-weight: 500;
+  transition: 0.25s border;
+  color: black;
+}
+
+.city-input:focus {
+  border: 3px solid rgba(0, 0, 0, 0.2);
+}
+
+.city-input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Search icon styling */
+.input-container .material-symbols-outlined {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  background: #ffffff;
+  color: #000000;
+  border-radius: 50%;
+  padding: 6px;
+  font-size: 22px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: 0.2s ease;
+  z-index: 10;
+}
+
+.input-container .material-symbols-outlined:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Location and date display */
+.location-date-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.location .material-symbols-outlined {
+  background: none;
+  color: white;
+  font-size: 22px;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* Weather summary */
+.weather-summary-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.weather-summaey-img {
+  width: 120px;
+  height: 120px;
+}
+
+.weather-summaey-info {
+  text-align: end;
+}
+
+.temp-text {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+/* Humidity and Wind section */
+.weather-conditions-container {
+  margin-top: 20px;
+}
+
+.condition-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.condition-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.condition-item .material-symbols-outlined {
+  background: none;
+  color: white;
+  font-size: 22px;
+  box-shadow: none;
+}
+
+.regular-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ✅ Forecast section fixed — inside main container, equally spaced */
+.forecast-item-container {
+  display: flex;
+  justify-content: space-between;  /* equal spacing between all forecast boxes */
+  align-items: flex-end;
+  width: 100%;
+  padding: 0 5px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.forecast-item {
+  flex: 1;
+  margin: 0 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  min-width: 70px;
+  transition: 0.3s ease;
+}
+
+.forecast-item:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.forecast-item img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  margin-bottom: 4px;
+}
+
+.forecast-item h5 {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 2px 0;
+}
+
+.forecast-item span {
+  font-size: 13px;
+  font-weight: 600;
+}
